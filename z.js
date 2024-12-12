@@ -33,3 +33,12 @@ function calculate() {
         setTimeout(clearDisplay, 1000);
     }
 }
+
+// Close calculator when clicking outside
+document.addEventListener('click', (e) => {
+    if (!calculator.contains(e.target) && !calculatorIcon.contains(e.target) && isOpen) {
+        isOpen = false;
+        calculator.classList.remove('active');
+        calculatorIcon.style.opacity = '1';
+    }
+});
