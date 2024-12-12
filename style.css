@@ -1,0 +1,134 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    background: linear-gradient(45deg, #1a1a2e, #16213e);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.calculator-icon {
+    position: fixed;
+    right: 30px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 50px;
+    height: 50px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    z-index: 1000;
+}
+
+.calculator-icon i {
+    color: #fff;
+    font-size: 24px;
+}
+
+.calculator {
+    position: fixed;
+    right: -400px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 320px;
+    background: #1a1a2e;
+    border-radius: 20px;
+    padding: 20px;
+    opacity: 0;
+    transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    box-shadow: 
+        20px 20px 60px #141423,
+        -20px -20px 60px #202039;
+}
+
+.calculator.active {
+    right: 100px;
+    opacity: 1;
+}
+
+.display {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(5px);
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    text-align: right;
+    height: 80px;
+    overflow: hidden;
+}
+
+.display input {
+    width: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    color: #fff;
+    font-size: 2em;
+    text-align: right;
+}
+
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+}
+
+.btn {
+    padding: 15px;
+    border: none;
+    background: #16213e;
+    color: #fff;
+    font-size: 1.2em;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 
+        5px 5px 10px #12192f,
+        -5px -5px 10px #1a294d;
+}
+
+.btn:hover {
+    transform: scale(0.95);
+    box-shadow: inset 5px 5px 10px #12192f,
+               inset -5px -5px 10px #1a294d;
+}
+
+.btn.operator {
+    background: #0f3460;
+}
+
+.btn.equal {
+    background: #e94560;
+    grid-column: span 2;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+.calculator-icon:hover {
+    animation: pulse 1s infinite;
+}
+
+@media (max-width: 768px) {
+    .calculator.active {
+        right: 50%;
+        transform: translate(50%, -50%);
+    }
+}
