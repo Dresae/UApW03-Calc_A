@@ -48,7 +48,7 @@ document.addEventListener('keydown', (e) => {
     if (isOpen) {
         if (e.key >= '0' && e.key <= '9' || e.key === '.') {
             appendValue(e.key);
-        } else if (e.key === '+'  e.key === '-'  e.key === '*' || e.key === '/') {
+        } else if (e.key === '+' || e.key === '-' || e.key === '*' || e.key === '/') {
             appendValue(e.key);
         } else if (e.key === 'Enter') {
             calculate();
