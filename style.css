@@ -16,7 +16,7 @@ body {
 
 .calculator-icon {
     position: fixed;
-    right: 30px;
+    right: 20px;
     top: 50%;
     transform: translateY(-50%);
     width: 50px;
@@ -118,8 +118,14 @@ body {
 
 @keyframes pulse {
     0% { transform: scale(1); }
-    50% { transform: scale(1.1); }
+    50% { transform: scale(1.2); }
     100% { transform: scale(1); }
+}
+
+.calculator-icon {
+    transform: scale(1); /* added default scale */
+    backface-visibility: hidden; /* added to prevent flickering */
+    transition: transform 0.125s;
 }
 
 .calculator-icon:hover {
