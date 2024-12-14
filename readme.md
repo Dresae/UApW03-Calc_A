@@ -7,3 +7,6 @@ Sample description
 ![screenshot](pics/screengif2.gif)
 
 ***
+***
+
+![screenshot](pics/slowking.gif "...Then teach and guide yourself")
